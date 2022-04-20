@@ -1,0 +1,18 @@
+.header{
+  width: 37.5rem;
+  height: 5rem;
+  background: #4448DA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.50rem;
+  padding: 1.25rem 9.375rem;
+  border-bottom: 1px solid #F4F5F4;
+
+
+  &_text{
+   display: flex;
+    justify-content: center;
+    color: white
+  }
+}
