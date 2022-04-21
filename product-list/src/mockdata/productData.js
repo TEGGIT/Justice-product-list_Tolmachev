@@ -48,7 +48,7 @@ const product = [
     image: pizza2,
     id: "BXD100BLK04",
     description: 'Вкусная пицца',
-    name: "Pepsi"
+    name: "Пицца1"
 
 
   },
@@ -57,7 +57,7 @@ const product = [
     image: pizza1,
     id: "BXD100BLK05",
     description: 'Ну тоже ниче так пицца',
-    name: "Pepsi"
+    name: "Пицца2"
 
 
   },
