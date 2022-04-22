@@ -1,10 +1,18 @@
 import React, {useState} from 'react';
 import classes from './MainContent.module.scss'
 import Product from "../Product/Product";
-import product from "../../mockdata/productData";
+import {useSelector} from "react-redux";
 import Button from "../UI/Button";
+import Modal from "../Modal/Modal";
+
+
 const MainContent = () => {
+  const product = useSelector((state) => state.productReducer)
+  const [openModal, setOpenModal] = useState(false)
   const [filteredCatalog, setFilteredCatalog] = useState(product)
+
+
+
   const filtered = (e) => {
     e.target.name === 'All'
         ? setFilteredCatalog(product)
@@ -18,7 +26,14 @@ const MainContent = () => {
           <Button value="Газировка" type= "button" name= "soda" onClick={(e) => filtered(e)}/>
           <Button value="Пицца" type= "button"name= "pizza" onClick={(e) => filtered(e)} />
           <Button value="Шоколад" type= "button" name= "chocolate" onClick={(e) => filtered(e)}/>
+
         </div>
+        <Button
+          type="button"
+          onClick={() => setOpenModal(true)}
+          value="Добавить товар"
+      >
+      </Button>
         {filteredCatalog.map(item => {
           return <Product
               name={item.name}
@@ -26,6 +41,7 @@ const MainContent = () => {
               description={item.description}
               image={item.image}/>
         })}
+        {openModal && <Modal setOpenModal={setOpenModal} />}
       </main>
   );
 };
