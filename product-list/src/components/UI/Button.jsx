@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Button.module.scss'
-const Button = ({type, onClick, value, name}) => {
+const Button = ({type, onClick, value, name, disabled}) => {
   return (
       <>
         <div
@@ -9,7 +9,8 @@ const Button = ({type, onClick, value, name}) => {
       <button
           className={classes.btn}
           type={type}
-          name={name}>
+          name={name}
+           disabled={disabled}>
         {value}
       </button>
         </div>
